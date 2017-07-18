@@ -1,0 +1,69 @@
+!-------------------------------------------------------------------------------
+! Xft settings
+!-------------------------------------------------------------------------------
+
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintmedium
+Xft.lcdfilter:              lcddefault
+
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.transparent:          false
+URxvt.fading:               0
+! URxvt.urgentOnBell:         true
+! URxvt.visualBell:           true
+URxvt.saveLines:            1000
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
+
+! Fonts
+URxvt.allow_bold:           true
+URxvt*font:                 xft:Inconsolata:pixelsize=15
+URxvt*boldFont:             xft:Inconsolata:pixelsize=15
+
+! Fix font space
+URxvt*letterSpace: -1
+
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+
+! Perl extensions
+URxvt.perl-ext:     
+URxvt.perl-ext-common:
+! URxvt.matcher.button:       1
+! URxvt.urlLauncher:          firefox
+
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
+
+! Colors
+! Snazzy - Converted from https://github.com/sindresorhus/iterm2-snazzy
+!          using https://github.com/richo/itermcolors2xdefaults
+URxvt*background:   #1e1f28
+URxvt*foreground:   #ebece6
+URxvt*cursorColor:   #e4e4e4
+URxvt*color0:   #000
+URxvt*color1:   #fb4245
+URxvt*color2:   #50fa7b
+URxvt*color3:   #f0fa8b
+URxvt*color4:   #49b9fe
+URxvt*color5:   #fb4cb3
+URxvt*color6:   #8be9fd
+URxvt*color7:   #ededec
+URxvt*color8:   #555555
+URxvt*color9:   #fb4245
+URxvt*color10:   #50fa7b
+URxvt*color11:   #f0fa8b
+URxvt*color12:   #49b9fe
+URxvt*color13:   #fb4cb3
+URxvt*color14:   #8be9fd
+URxvt*color15:   #ededec
