@@ -1,6 +1,7 @@
 #!/bin/sh
 #Add local fonts
 xset +fp $HOME/.local/share/fonts/           # Prepend a font path to Xorg's font list
+xset +fp $HOME/.config/myresources/fonts/
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
