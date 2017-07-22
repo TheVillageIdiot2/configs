@@ -3,9 +3,8 @@
 #############
 #Config files
 alias vim="nvim"
-alias vimzsh="vim ~/.zshrc"
-#alias vimi3="vim ~/.config/i3/config"
-alias vimbspwm="vim ~/.config/bspwm/"
+alias vimzsh="nvim ~/.zshrc"
+alias vimi3="nvim ~/.config/i3/config"
 alias vimrc="nvim ~/.config/nvim/"
 #alias vimxres="vim /xres/Xresources"
 #alias vimevil="vim /home/jchenry/code/opsrcmods/evilvte/src/config.h"

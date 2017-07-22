@@ -21,7 +21,7 @@ bindsym $mod+Mod1+l exec i3lock
 #font pango:DejaVu Sans Mono 8
 
 #Set that DANK fucking font
-font pango:Inconsolata-Regular, Steel_Alphabet 11
+font pango:Monaco, Steel_Alphabet 11
 ###############################################
 #HOTKEYS
 ###############################################
@@ -30,7 +30,7 @@ font pango:Inconsolata-Regular, Steel_Alphabet 11
 floating_modifier $mod
 
 # start a terminal with Win+Enter
-bindsym $mod+Return exec evilvte -e zsh
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -185,44 +185,66 @@ mode "resize" {
 }
 
 
+
+###########################################
+#COLOR
+###########################################
+#Set color constants from XResourcs
+#xrdb ~/.Xresources
+
+#Note final value is fallback
+set_from_resource $black        color0 #000000
+set_from_resource $darkblack    color8 #000000
+set_from_resource $darkred      color1  #000000
+set_from_resource $red          color9  #000000
+set_from_resource $darkgreen    color2  #000000
+set_from_resource $green        color10 #000000
+set_from_resource $darkyellow   color3  #000000
+set_from_resource $yellow       color11 #000000
+set_from_resource $darkblue     color4  #000000
+set_from_resource $blue         color12 #000000
+set_from_resource $darkmagenta  color5  #000000
+set_from_resource $magenta      color13 #000000
+set_from_resource $darkcyan     color6  #000000
+set_from_resource $cyan         color14 #000000
+set_from_resource $darkwhite    color7  #000000
+set_from_resource $white        color15 #000000
+
+#Evilvte draft 1
+#set $inactive-bg-color      #08180d
+#set $bg-color               #09270d
+#set $text-color             #73d9f4
+#set $inactive-text-color    #28bad1
+#set $urgent-bg-color        #330b2e
+set $a-bg-color             $darkcyan
+set $a-text-color           $cyan
+set $ia-bg-color            $darkblue
+set $ia-text-color          $blue
+set $ur-bg-color            $darkred
+
+#Bind colors to windows
+#                       border          background      text            indicator
+client.focused          $a-bg-color     $a-bg-color     $a-text-color   $darkblack
+client.unfocused        $ia-bg-color    $ia-bg-color    $ia-text-color  $darkblack
+client.focused_inactive $ia-bg-color    $ia-bg-color    $ia-text-color  $darkblack
+client.urgent           $ur-bg-color    $ur-bg-color    $ia-text-color  $darkblack
+
 ###########################################
 #BAR
 ###########################################
-#Set color constants 
-
-#Bluemetal
-#set $inactive-bg-color      #002b36
-#set $bg-color               #073642
-#set $text-color             #F8F8FB
-#set $inactive-text-color    #7B8187
-#set $urgent-bg-color        #CA0123
-#Evilvte draft 1
-set $inactive-bg-color      #08180d
-set $bg-color               #09270d
-set $text-color             #73d9f4
-set $inactive-text-color    #28bad1
-set $urgent-bg-color        #330b2e
-
-
-#Bind colors to windows
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color  
-
+#Set color constants from XResourcs
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
     status_command i3status
     tray_output primary
     colors {
-        background $bg-color
+        background $ia-bg-color
         separator #757575
-        #                  border             background         text
-        focused_workspace  $bg-color          $bg-color          $text-color
-        inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-        urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+        #                  border           background      text
+        focused_workspace  $a-bg-color      $a-bg-color     $a-text-color
+        inactive_workspace $ia-bg-color     $ia-bg-color    $ia-text-color
+        urgent_workspace   $ur-bg-color     $ur-bg-color    $ia-text-color
     }
 }
 

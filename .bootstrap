@@ -2,7 +2,9 @@
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 #Create symlink to steel alphabet font
-ln -s ~/.config/myresources/Steel_Alphabet.ttf ~/.local/share/fonts/TTF/Steel_Alphabet.ttf 
-fc-cache
+chmod 0444 ~/.config/myresources/fonts/Steel_Alphabet.ttf
+pushd ~/.config/myresources/fonts
 mkfontscale
 mkfontdir
+popd
+fc-cache -f ~/.config/myresources/fonts
