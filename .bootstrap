@@ -12,3 +12,16 @@ sudo mkfontscale
 sudo mkfontdir
 popd
 sudo fc-cache -vf 
+
+
+echo '
+Things ya gotta do:
+Install monaco font using package provider
+Install i3 gaps
+Install compton
+Install urxvt
+Install autocutsel
+Install neovim  + Neovim plug (And then plugupdate and stuff)
+Install rofi
+Probably some other stuff lol
+' > ~/STYLINTODO.txt && cat STYLINTODO

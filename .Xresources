@@ -50,31 +50,56 @@ URxvt.pointerBlank:         true
 ! Colors
 ! Snazzy - Converted from https://github.com/sindresorhus/iterm2-snazzy
 !          using https://github.com/richo/itermcolors2xdefaults
-URxvt*foreground:   #eff0eb
-URxvt*background:   #282a36
-URxvt*cursorColor:   #e4e4e4
+#define FG #eff0eb
+#define BG #282a36
+URxvt*foreground:   FG
+URxvt*background:   BG
+
+#define DARKWHITE #e4e4e4
+URxvt*cursorColor:  DARKWHITE
 !All colors are in order (#)Light (#+8)Dark
 !black
-URxvt*color0:   #686868
-URxvt*color8:   #333333
+#define BLACK #333333
+#define DARKBLACK #686868
+URxvt*color0:   DARKBLACK
+URxvt*color8:   BLACK
 !Red
-URxvt*color1:   #ff5c57
-URxvt*color9:   #ff5c57
+#define RED #ff5c57
+URxvt*color1:   RED
+URxvt*color9:   RED
 !Green
-URxvt*color2:   #5af78e
-URxvt*color10:   #5af78e
+#define GREEN #5af78e
+URxvt*color2:   GREEN
+URxvt*color10:   GREEN
 !Yellow
-URxvt*color3:   #f3f99d
-URxvt*color11:   #f3f99d
+#define YELLOW #f3f99d
+URxvt*color3:   YELLOW
+URxvt*color11:   YELLOW
 !Blue
-URxvt*color4:   #57c7ff
-URxvt*color12:   #57c7ff
+#define BLUE #57c7ff
+URxvt*color4:   BLUE
+URxvt*color12:   BLUE
 !Magenta
-URxvt*color5:   #ff6ac1
-URxvt*color13:   #ff6ac1
+#define MAGENTA #ff6ac1
+URxvt*color5:   MAGENTA
+URxvt*color13:   MAGENTA
 !Cyan
-URxvt*color6:   #9aedfe
-URxvt*color14:   #9aedfe
+#define CYAN #9aedfe
+URxvt*color6:   CYAN
+URxvt*color14:   CYAN
 !White
-URxvt*color7:   #e4e4e4
-URxvt*color15:   #f2f2f2
+#define WHITE #f2f2f2
+URxvt*color7:   DARKWHITE
+URxvt*color15:   WHITE
+
+
+
+!Rofi colors
+! State:           'bg',    'fg',   'bgalt',    'hlbg',     'hlfg'
+rofi.color-normal: BG,      FG,     BLACK,      BLUE,       BLACK
+rofi.color-urgent: BG,      FG,     BLACK,      BLUE,       DARKWHITE 
+rofi.color-active: BG,      FG,     BLACK,      BLUE,       DARKWHITE 
+
+!                  'background', 'border', 'separator'
+rofi.color-window: BG,              BG,             FG
+!
