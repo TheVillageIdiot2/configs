@@ -1,10 +1,14 @@
 #Download prezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
+#Install rust
+curl -f https://sh.rustup.rs | sh
+
 #Create symlink to steel alphabet font
-chmod 0444 ~/.config/myresources/fonts/Steel_Alphabet.ttf
-pushd ~/.config/myresources/fonts
-mkfontscale
-mkfontdir
+sudo cp ~/.config/myresources/fonts/Steel_Alphabet.ttf /usr/share/fonts/TTF/
+sudo chmod 0644 /usr/share/fonts/TTF/Steel_Alphabet.ttf
+pushd /usr/share/fonts/TTF/
+sudo mkfontscale
+sudo mkfontdir
 popd
-fc-cache -f ~/.config/myresources/fonts
+sudo fc-cache -vf 

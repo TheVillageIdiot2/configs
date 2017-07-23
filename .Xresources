@@ -50,22 +50,31 @@ URxvt.pointerBlank:         true
 ! Colors
 ! Snazzy - Converted from https://github.com/sindresorhus/iterm2-snazzy
 !          using https://github.com/richo/itermcolors2xdefaults
-URxvt*background:   #1e1f28
-URxvt*foreground:   #ebece6
+URxvt*foreground:   #eff0eb
+URxvt*background:   #282a36
 URxvt*cursorColor:   #e4e4e4
-URxvt*color0:   #000
-URxvt*color1:   #fb4245
-URxvt*color2:   #50fa7b
-URxvt*color3:   #f0fa8b
-URxvt*color4:   #49b9fe
-URxvt*color5:   #fb4cb3
-URxvt*color6:   #8be9fd
-URxvt*color7:   #ededec
-URxvt*color8:   #555555
-URxvt*color9:   #fb4245
-URxvt*color10:   #50fa7b
-URxvt*color11:   #f0fa8b
-URxvt*color12:   #49b9fe
-URxvt*color13:   #fb4cb3
-URxvt*color14:   #8be9fd
-URxvt*color15:   #ededec
+!All colors are in order (#)Light (#+8)Dark
+!black
+URxvt*color0:   #686868
+URxvt*color8:   #333333
+!Red
+URxvt*color1:   #ff5c57
+URxvt*color9:   #ff5c57
+!Green
+URxvt*color2:   #5af78e
+URxvt*color10:   #5af78e
+!Yellow
+URxvt*color3:   #f3f99d
+URxvt*color11:   #f3f99d
+!Blue
+URxvt*color4:   #57c7ff
+URxvt*color12:   #57c7ff
+!Magenta
+URxvt*color5:   #ff6ac1
+URxvt*color13:   #ff6ac1
+!Cyan
+URxvt*color6:   #9aedfe
+URxvt*color14:   #9aedfe
+!White
+URxvt*color7:   #e4e4e4
+URxvt*color15:   #f2f2f2

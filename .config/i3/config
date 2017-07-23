@@ -2,26 +2,15 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+#Set that DANK fucking font
+font pango:Monaco, Steel_Alphabet 11
+
 #Set modifier to be windows key
 set $mod Mod4
 
 #set lock
 bindsym $mod+Mod1+l exec i3lock
 
-###############################################
-#FONTS
-###############################################
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-#font pango:monospace 8
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-#Set that DANK fucking font
-font pango:Monaco, Steel_Alphabet 11
 ###############################################
 #HOTKEYS
 ###############################################
@@ -35,13 +24,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
+#ROFI program runner
+bindsym $mod+d exec rofi -show run -config ~/.config/rofi/config 
 
 # change focus
 bindsym $mod+h focus left
@@ -78,9 +62,6 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
-
 # reload the configuration file
 #bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -107,25 +88,25 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 
 #Create titles for each
 #Pewter
-set $WS1 "1.     "
+set $WS1 "1.   "
 #Zinc
-set $WS2 "2.     "
+set $WS2 "2.   "
 #Brass
-set $WS3 "3.     "
+set $WS3 "3.   "
 #Copper
-set $WS4 "4.     "
+set $WS4 "4.   "
 #Bronze
-set $WS5 "5.     "
+set $WS5 "5.   "
 #Cadmium
-set $WS6 "6.     "
+set $WS6 "6.   "
 #Bendalloy
-set $WS7 "7.     "
+set $WS7 "7.   "
 #Gold
-set $WS8 "8.     "
+set $WS8 "8.   "
 #Electrum
-set $WS9 "9.     "
+set $WS9 "9.   "
 #Atium
-set $WS10 "10.    "
+set $WS10 "10.  "
 
 # switch to workspace/scratchpad
 bindsym $mod+1 workspace $WS1
@@ -189,45 +170,36 @@ mode "resize" {
 ###########################################
 #COLOR
 ###########################################
-#Set color constants from XResourcs
-#xrdb ~/.Xresources
+#Set color constants from XResources
+exec_always xrdb ~/.Xresources
 
 #Note final value is fallback
-set_from_resource $black        color0 #000000
-set_from_resource $darkblack    color8 #000000
-set_from_resource $darkred      color1  #000000
-set_from_resource $red          color9  #000000
-set_from_resource $darkgreen    color2  #000000
-set_from_resource $green        color10 #000000
-set_from_resource $darkyellow   color3  #000000
-set_from_resource $yellow       color11 #000000
-set_from_resource $darkblue     color4  #000000
-set_from_resource $blue         color12 #000000
-set_from_resource $darkmagenta  color5  #000000
-set_from_resource $magenta      color13 #000000
-set_from_resource $darkcyan     color6  #000000
-set_from_resource $cyan         color14 #000000
-set_from_resource $darkwhite    color7  #000000
-set_from_resource $white        color15 #000000
-
-#Evilvte draft 1
-#set $inactive-bg-color      #08180d
-#set $bg-color               #09270d
-#set $text-color             #73d9f4
-#set $inactive-text-color    #28bad1
-#set $urgent-bg-color        #330b2e
-set $a-bg-color             $darkcyan
-set $a-text-color           $cyan
-set $ia-bg-color            $darkblue
-set $ia-text-color          $blue
-set $ur-bg-color            $darkred
+set_from_resource $background        URxvt.background  #000000
+set_from_resource $foreground        URxvt.foreground  #000000
+set_from_resource $black        URxvt.color0  #000000
+set_from_resource $darkblack    URxvt.color8  #000000
+set_from_resource $darkred      URxvt.color1  #000000
+set_from_resource $red          URxvt.color9  #000000
+set_from_resource $darkgreen    URxvt.color2  #000000
+set_from_resource $green        URxvt.color10 #000000
+set_from_resource $darkyellow   URxvt.color3  #000000
+set_from_resource $yellow       URxvt.color11 #000000
+set_from_resource $darkblue     URxvt.color4  #000000
+set_from_resource $blue         URxvt.color12 #000000
+set_from_resource $darkmagenta  URxvt.color5  #000000
+set_from_resource $magenta      URxvt.color13 #000000
+set_from_resource $darkcyan     URxvt.color6  #000000
+set_from_resource $cyan         URxvt.color14 #000000
+set_from_resource $darkwhite    URxvt.color7  #000000
+set_from_resource $white        URxvt.color15 #000000
 
 #Bind colors to windows
-#                       border          background      text            indicator
-client.focused          $a-bg-color     $a-bg-color     $a-text-color   $darkblack
-client.unfocused        $ia-bg-color    $ia-bg-color    $ia-text-color  $darkblack
-client.focused_inactive $ia-bg-color    $ia-bg-color    $ia-text-color  $darkblack
-client.urgent           $ur-bg-color    $ur-bg-color    $ia-text-color  $darkblack
+#Actual:
+#                       Border          Background      Text        Indicator
+client.focused          $background     $background      $white     $background
+client.unfocused        $background     $background      $black     $background
+client.focused_inactive $background     $background      $black     $background
+client.urgent           $background     $background       $white    $background
 
 ###########################################
 #BAR
@@ -239,24 +211,36 @@ bar {
     status_command i3status
     tray_output primary
     colors {
-        background $ia-bg-color
-        separator #757575
+        background $darkblack
+        separator $black
         #                  border           background      text
-        focused_workspace  $a-bg-color      $a-bg-color     $a-text-color
-        inactive_workspace $ia-bg-color     $ia-bg-color    $ia-text-color
-        urgent_workspace   $ur-bg-color     $ur-bg-color    $ia-text-color
+        focused_workspace  $black           $black          $white
+        inactive_workspace $darkblack       $darkblack      $black
+        urgent_workspace   $red             $red            $white
     }
 }
 
-#Run my handy-dandy (and useless all-aroundy) bg randomizer
-#Probably shold add more features so it isnt just a shitty version of fehs built in features.
-#exec_always zsh ~/Documents/Pictures/Wallpapers/randomize_wallpaper.sh
+###############################################
+# GAPS + MISC
+###############################################
+
+#Enable gaps
+for_window [class="^.*"] border pixel 0
+gaps inner 10
+gaps outer 10
+
+
+################################################
+#DAEMONS AND SUCH
+################################################
 
 #Set bg to allomancy
-exec_always feh --bg-fill ~/Documents/Pictures/Wallpapers/active/mistborn.jpg
+exec_always feh --bg-fill ~/.config/myresources/superbrothers_wall.png
 
 #Start clipboard daemon
 exec autocutsel -buttonup
 
 #Start compton
-exec compton -b --config ~/dotfiles/compton/config
+exec compton -b --config ~/.config/compton/config
+
+
