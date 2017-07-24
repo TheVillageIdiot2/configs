@@ -1,5 +1,10 @@
-#Download prezto
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+#Download prezto fork
+git clone --recursive https://github.com/TheVillageIdiot2/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+pushd ~/.zprezto
+git remote add upstream https://github.com/sorin-ionescu/prezto.git
+git pull upstream master
+git pull origin master
+popd
 
 #Install rust
 curl -f https://sh.rustup.rs | sh
