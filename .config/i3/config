@@ -234,15 +234,8 @@ gaps outer 10
 #DAEMONS AND SUCH
 ################################################
 
-#Set bg to allomancy
-exec_always feh --bg-fill ~/.config/myresources/superbrothers_wall.png
+#Set bg to SUPERBROS
+exec_always --no-startup-id exec feh --bg-fill ~/.config/myresources/superbrothers_wall.png
 
-#Start clipboard daemon
-exec autocutsel -buttonup
-
-#Start compton
-exec compton -b --config ~/.config/compton/config
-
-exec ~/.config/lemonbar/mylemon/run.sh
-
-
+#Start lemonbar
+exec --no-startup-id exec ~/.config/lemonbar/mylemon/run.sh

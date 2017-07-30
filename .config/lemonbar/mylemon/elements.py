@@ -53,3 +53,11 @@ class Overline(BarElem):
 
     def reduce(self):
         return ["%{+o}", self.elem, "%{-o}"]
+
+class Button(BarElem):
+    def __init__(self, elem, command):
+        self.elem = elem
+        self.command = command
+
+    def reduce(self):
+        return ["%{A:" + self.command + ":}", self.elem, "%{A}"]

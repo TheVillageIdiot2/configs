@@ -21,12 +21,17 @@ sudo fc-cache -vf
 
 echo '
 Things ya gotta do:
-Install monaco font using package provider
+Install monaco
 Install i3 gaps
 Install compton
-Install urxvt
+Install rxvt-unicode
+Install rxvt-unicode-terminfo
 Install autocutsel
-Install neovim  + Neovim plug (And then plugupdate and stuff)
+Install neovim  
+Install neovim-plug (And then plugupdate and stuff)
 Install rofi
+Install adapta-gtk-theme
+Install paper-icon-theme-git
+Install lemonbar-xft-git
 Probably some other stuff lol
 ' > ~/STYLINTODO.txt && cat STYLINTODO

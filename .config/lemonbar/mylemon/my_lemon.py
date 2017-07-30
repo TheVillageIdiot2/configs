@@ -6,7 +6,6 @@ import time
 
 from elements import *
 
-
 class Workspace(BarElem):
     def __init__(self, ws_dict):
         self.num = ws_dict['num']
@@ -17,7 +16,7 @@ class Workspace(BarElem):
         self.urgent = ws_dict['urgent']
 
     def reduce(self):
-        txt = " "+self.name+" "
+        txt = Button(" "+self.name+" ", "i3-msg workspace \"{}\"".format(self.name))
         if self.focused:
             return Overline(Underline(txt))
         elif self.visible:
@@ -39,8 +38,6 @@ class WSMaster(BarElem):
             self.last_update = STATE.last_workspace_change
         return self.workspaces
 
-
-
 ONE_SECOND = timedelta(seconds=1)
 class Clock(BarElem):
     def __init__(self):
@@ -50,7 +47,8 @@ class Clock(BarElem):
         now = datetime.now()
         if self.next_update < STATE.last_update:
             self.next_update = now + ONE_SECOND
-        return "{:02}:{:02}:{:02}".format(now.hour, now.minute, now.second)
+        return now.strftime("%a, %b %d, %Y | %H:%M:%S")
+
 
 
 STATE = None
@@ -60,7 +58,8 @@ class BarState(object):
         self.i3 = i3
 
         #Build bar
-        self.basebar = [WSMaster(), RightAlign(Clock())]
+        padding = "  "
+        self.basebar = [padding, WSMaster(), RightAlign(Clock()), padding]
 
         #Set timestamps of data fed from global
         self.last_window_change = datetime.now()
