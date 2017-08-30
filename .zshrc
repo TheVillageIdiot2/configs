@@ -15,6 +15,7 @@ alias cnctwpi="cat /root/wpi_cnct_cmds.txt | zsh"
 alias cnctjeh="cat /root/home_cnct_cmds.txt | zsh"
 alias cncttucker="cat /root/tucker_cnct_cmds.txt | zsh"
 alias cnct="cncttucker"
+alias nvim_clear_swaps="rm -f ~/.local/share/nvim/swap/*"
 
 #Misc
 alias atom="atom-git"
