@@ -3,8 +3,12 @@ from datetime import datetime, timedelta
 import i3ipc
 import threading
 import time
+import subprocess
 
 from elements import *
+
+CLOCK_INTERVAL = timedelta(seconds=1)
+BATTERY_INTERVAL = timedelta(seconds=5)
 
 class Workspace(BarElem):
     def __init__(self, ws_dict):
@@ -38,17 +42,32 @@ class WSMaster(BarElem):
             self.last_update = STATE.last_workspace_change
         return self.workspaces
 
-ONE_SECOND = timedelta(seconds=1)
 class Clock(BarElem):
     def __init__(self):
         self.next_update = datetime.min
+        self.text = ""
 
     def reduce(self):
-        now = datetime.now()
         if self.next_update < STATE.last_update:
-            self.next_update = now + ONE_SECOND
-        return now.strftime("%a, %b %d, %Y | %H:%M:%S")
+            now = datetime.now()
+            self.next_update = now + CLOCK_INTERVAL
+            self.text = now.strftime("%a, %b %d, %Y | %H:%M:%S")
+        return self.text
 
+class Battery(BarElem):
+    def __init__(self):
+        self.next_update = datetime.min
+        self.text = ""
+
+    def reduce(self):
+        if self.next_update < STATE.last_update:
+            now = datetime.now()
+            self.next_update = now + BATTERY_INTERVAL
+            bat_output = subprocess.run(['acpi', '-b'], stdout=subprocess.PIPE).stdout.decode('utf-8')
+            left_bound = bat_output.find(":") + 2
+            right_bound = bat_output.find("%") + 1
+            self.text = bat_output[left_bound : right_bound]
+        return self.text
 
 
 STATE = None
@@ -59,7 +78,7 @@ class BarState(object):
 
         #Build bar
         padding = "  "
-        self.basebar = [padding, WSMaster(), RightAlign(Clock()), padding]
+        self.basebar = [padding, WSMaster(), RightAlign([Battery(), " | ", Clock()]), padding]
 
         #Set timestamps of data fed from global
         self.last_window_change = datetime.now()
