@@ -46,5 +46,4 @@ autocutsel -buttonup &
 #Start compton
 compton -b --config ~/.config/compton/config &
 
-VBoxClient-all
 exec i3
