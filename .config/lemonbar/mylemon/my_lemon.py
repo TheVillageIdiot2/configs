@@ -103,11 +103,6 @@ def i3_workspace_callback(i3, e):
     STATE.last_workspace_change = datetime.now()
     STATE.update() #Want an immediate update for such critical ui changes
 
-def i3_window_callback(i3, e):
-    global STATE
-    STATE.last_window_change = datetime.now()
-    STATE.update() #Want an immediate update for such critical ui changes
-
 def main():
     global STATE
     #Connect to i3
@@ -118,8 +113,7 @@ def main():
     STATE.update()
 
     #Add i3 listeners
-    i3.on('workspace::focus', i3_workspace_callback)
-    i3.on('window::focus', i3_window_callback)
+    i3.on('workspace', i3_workspace_callback)
 
     #Add thread that polls on .1 second intervals
     def upd_loop():
