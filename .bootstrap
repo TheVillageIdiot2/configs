@@ -34,4 +34,4 @@ Install adapta-gtk-theme
 Install paper-icon-theme-git
 Install lemonbar-xft-git
 Probably some other stuff lol
-' > ~/STYLINTODO.txt && cat STYLINTODO
+' > ~/STYLINTODO.txt && cat STYLINTODO.txt
