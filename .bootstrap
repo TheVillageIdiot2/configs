@@ -38,7 +38,6 @@ Install feh
 Install acpi
 Install adapta-gtk-theme
 Install paper-icon-theme-git
-Install lemonbar-xft-git
-and also need pip3 i3ipc to make it work
+Install polybar
 Probably some other stuff lol
 ' > ~/STYLINTODO.txt && cat STYLINTODO.txt
