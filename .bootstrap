@@ -21,7 +21,10 @@ sudo fc-cache -vf
 
 echo '
 Things ya gotta do:
+Install zsh and change shell to zsh
+then, run zshinitializer
 Install monaco
+Install python3 and python-pip
 Install i3 gaps
 Install compton
 Install rxvt-unicode
@@ -29,9 +32,13 @@ Install rxvt-unicode-terminfo
 Install autocutsel
 Install neovim  
 Install neovim-plug (And then plugupdate and stuff)
+Don't forget to sudo pip3 install neovim, then UpdateRemotePlugins
 Install rofi
+Install feh
+Install acpi
 Install adapta-gtk-theme
 Install paper-icon-theme-git
 Install lemonbar-xft-git
+and also need pip3 i3ipc to make it work
 Probably some other stuff lol
 ' > ~/STYLINTODO.txt && cat STYLINTODO.txt
