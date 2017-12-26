@@ -3,7 +3,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 #Set that DANK fucking font
-font pango:Monaco, Steel_Alphabet 11
+font Monaco, Steel_Alphabet 11
 
 #Set modifier to be windows key (Mod4) or alt key (Mod1)
 set $mod Mod1
@@ -68,7 +68,7 @@ bindsym $mod+a focus parent
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 #Create binding for resize mode
 bindsym $mod+r mode "resize"
@@ -89,23 +89,23 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 
 #Create titles for each
 #Pewter
-set $WS1 "1.   "
+set $WS1 "1.    "
 #Zinc
-set $WS2 "2.   "
+set $WS2 "2.    "
 #Brass
-set $WS3 "3.   "
+set $WS3 "3.    "
 #Copper
-set $WS4 "4.   "
+set $WS4 "4.    "
 #Bronze
-set $WS5 "5.   "
+set $WS5 "5.    "
 #Cadmium
-set $WS6 "6.   "
+set $WS6 "6.    "
 #Bendalloy
-set $WS7 "7.   "
+set $WS7 "7.    "
 #Gold
-set $WS8 "8.   "
+set $WS8 "8.    "
 #Electrum
-set $WS9 "9.   "
+set $WS9 "9.    "
 #Atium
 set $WS10 "10.  "
 
@@ -195,40 +195,28 @@ set_from_resource $darkwhite    URxvt.color7  #000000
 set_from_resource $white        URxvt.color15 #000000
 
 #Bind colors to windows
-#Actual:
-#                       Border          Background      Text        Indicator
-client.focused          $background     $background      $white     $background
-client.unfocused        $background     $background      $black     $background
-client.focused_inactive $background     $background      $black     $background
-client.urgent           $background     $background       $white    $background
-
-###########################################
-#BAR
-###########################################
-#Set color constants from XResourcs
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-    #status_command i3status
-    #tray_output primary
-    #colors {
-        #background $darkblack
-        #separator $black
-        ##                  border           background      text
-        #focused_workspace  $black           $black          $white
-        #inactive_workspace $darkblack       $darkblack      $black
-        #urgent_workspace   $red             $red            $white
-    #}
-#}
-
+#                       Border          Background(?)   Text        Indicator
+client.focused          $darkgreen       $darkgreen       $white      $background
+client.unfocused        $darkcyan     $darkcyan     $black      $background
+client.focused_inactive $background     $background     $black      $background
+client.urgent           $background     $background     $white      $background
+# testing
+#client.focused          #FFFFFF          #FF0000      #00FF00    #0000FF 
+#client.unfocused        #FFFF00     #FFFF00      #FFFF00    #FFFF00 
+#client.focused_inactive #00FFFF     #00FFFF      #00FFFF    #00FFFF 
+#client.urgent           #FF00FF     #FF00FF      #FF00FF   #FF00FF 
 ###############################################
 # GAPS + MISC
 ###############################################
 
 #Enable gaps
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 gaps inner 20
 gaps outer 10
+
+#Only one window -> no gaps!
+smart_gaps on
+smart_borders no_gaps
 
 
 ################################################
@@ -238,5 +226,6 @@ gaps outer 10
 #Set bg to SUPERBROS
 exec_always --no-startup-id exec feh --bg-fill ~/.config/myresources/superbrothers_wall.png
 
-#Start lemonbar
-exec --no-startup-id exec ~/.config/lemonbar/mylemon/run.sh
+#Start/restart polybar
+exec_always pkill "polybar"; (polybar example -q &)
+#exec_always polybar example
