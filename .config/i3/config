@@ -5,11 +5,12 @@
 #Set that DANK fucking font
 font pango:Monaco, Steel_Alphabet 11
 
-#Set modifier to be windows key
-set $mod Mod4
+#Set modifier to be windows key (Mod4) or alt key (Mod1)
+set $mod Mod1
+set $sup Mod4
 
 #set lock
-bindsym $mod+Mod1+l exec i3lock
+bindsym $mod+$sup+l exec i3lock
 
 ###############################################
 #HOTKEYS
