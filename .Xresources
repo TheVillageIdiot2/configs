@@ -52,44 +52,38 @@ URxvt.pointerBlank:         true
 !          using https://github.com/richo/itermcolors2xdefaults
 !All colors are in order (#)Light (#+8)Dark
 !black
-#define BLACK #333333
-#define DARKBLACK #686868
+#define BLACK #131313
+#define DARKBLACK #000000
 URxvt*color0:   DARKBLACK
 URxvt*color8:   BLACK
 !Red
 #define RED #ff5c57
-!#define DARKRED #ff5c57
 #define DARKRED #800000
 URxvt*color1:   DARKRED
 URxvt*color9:   RED
 !Green
-#define GREEN #5af78e
-!#define DARKGREEN #5af78e
-#define DARKGREEN #00780F
+#define GREEN #09c347
+#define DARKGREEN #03491b
 URxvt*color2:   DARKGREEN
 URxvt*color10:   GREEN
 !Yellow
-#define YELLOW #f3f99d
-!#define DARKYELLOW #f3f99d
-#define DARKYELLOW #747A1E
+#define YELLOW #e7f33f
+#define DARKYELLOW #434805
 URxvt*color3:   DARKYELLOW
 URxvt*color11:   YELLOW
 !Blue
-#define BLUE #57c7ff
-!#define DARKBLUE #57c7ff
-#define DARKBLUE #004880
+#define BLUE #0066ff
+#define DARKBLUE #001f4d
 URxvt*color4:   DARKBLUE
 URxvt*color12:   BLUE
 !Magenta
 #define MAGENTA #ff6ac1
-!#define DARKMAGENTA #ff6ac1
 #define DARKMAGENTA #800042
 URxvt*color5:   DARKMAGENTA
 URxvt*color13:   MAGENTA
 !Cyan
-#define CYAN #9aedfe
-!#define DARKCYAN #9aedfe
-#define DARKCYAN #1B6E7F
+#define CYAN #03d3fc
+#define DARKCYAN #013f4c
 URxvt*color6:   DARKCYAN
 URxvt*color14:   CYAN
 !White
