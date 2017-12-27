@@ -1,4 +1,9 @@
 #!/bin/sh
+#Configure gpu
+#xrandr --setprovideroutputsource modesetting NVIDIA-0
+#xrandr --auto
+
+
 #Add local fonts
 xset +fp /usr/share/fonts/TTF/ &
 xset fp rehash &
@@ -44,6 +49,6 @@ fi
 autocutsel -buttonup &
 
 #Start compton
-compton -b --config ~/.config/compton/config &
+# compton -b --config ~/.config/compton/config &
 
 exec i3
