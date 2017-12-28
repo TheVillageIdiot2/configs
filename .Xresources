@@ -27,6 +27,9 @@ URxvt.allow_bold:           true
 URxvt*font:                 xft:Monaco:pixelsize=14
 URxvt*boldFont:             xft:Monaco:pixelsize=14
 
+!disable that annoying fucking iso shit on ctrl+shit
+URxvt*iso14755:False
+
 ! Fix font space
 ! URxvt*letterSpace: -1
 
