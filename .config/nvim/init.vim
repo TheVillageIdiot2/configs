@@ -57,8 +57,8 @@ filetype indent on
 set autoindent
 
 "Visual helpers
-set wildmenu	"visual tab complete
 set showmatch	"Show matching parens, etc
+set wildmenu "Command auto complete
 
 "Search helpers
 set incsearch	"Search as you type
@@ -88,8 +88,6 @@ noremap q: :
 
 "Quick navigation to start/end of line, top/bottom of page with shift nav
 nnoremap H ^
-"nnoremap J <C-D>
-"nnoremap K <C-U>
 nnoremap L A<esc>
 
 "Filetype specific stuff
@@ -136,13 +134,12 @@ augroup shellscripts
     autocmd BufEnter *.sh setlocal softtabstop=2
 augroup END
 
-augroup rust
-    autocmd!
-    autocmd BufEnter *.rs let g:syntastic_rust_checkers = ['rustc']
-    autocmd BufEnter *.rs let g:syntastic_quiet_messages = {"regex": 'find crate for'}
-    autocmd BufEnter *.rs let g:rustfmt_autosave = 1
-    autocmd BufEnter *.rs let g:racer_cmd = "/usr/bin/racer"
-    autocmd BufEnter *.rs set hidden
-    autocmd BufEnter *.rs let g:racer_experimental_completer = 1
-augroup END
+
+"augroup rust
+    "autocmd!
+    "autocmd BufEnter *.rs let g:syntastic_rust_checkers = ['rustc']
+    "autocmd BufEnter *.rs let g:syntastic_quiet_messages = {"regex": 'find crate for'}
+    "autocmd BufEnter *.rs let g:rustfmt_autosave = 1
+    "autocmd BufEnter *.rs set hidden
+"augroup END
 
