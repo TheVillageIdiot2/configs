@@ -8,6 +8,9 @@ popd
 
 #Install rust
 curl -f https://sh.rustup.rs | sh
+rustup component add rust-src
+cargo install racer
+cargo install clippy
 
 #Create symlink to steel alphabet font
 sudo cp ~/.config/myresources/fonts/Steel_Alphabet.ttf /usr/share/fonts/TTF/
@@ -31,7 +34,7 @@ Install rxvt-unicode
 Install rxvt-unicode-terminfo
 Install autocutsel
 Install neovim  
-Install neovim-plug (And then plugupdate and stuff)
+Install vim-plug. DO NOT USE THE ARCH PACKAGE ITS BROKEN
 Don't forget to sudo pip3 install neovim, then UpdateRemotePlugins
 Install rofi
 Install feh
