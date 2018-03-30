@@ -76,12 +76,12 @@ URxvt*color3:   DARKYELLOW
 URxvt*color11:   YELLOW
 !Blue
 #define BLUE #0066ff
-#define DARKBLUE #001f4d
+#define DARKBLUE #003380
 URxvt*color4:   DARKBLUE
 URxvt*color12:   BLUE
 !Magenta
-#define MAGENTA #ff6ac1
-#define DARKMAGENTA #800042
+#define MAGENTA #ff80c1
+#define DARKMAGENTA #cc0069
 URxvt*color5:   DARKMAGENTA
 URxvt*color13:   MAGENTA
 !Cyan
