@@ -13,9 +13,11 @@ syntax on
 
 "Don't use vi settings
 "set nocompatible
+
+"Make default encoding utf-8
 set encoding=utf-8
 
-"Use mouse
+"Enable mouse
 set mouse=a
 
 "Visual stuff
@@ -58,16 +60,20 @@ set autoindent
 
 "Visual helpers
 set showmatch	"Show matching parens, etc
-set wildmenu "Command auto complete
-
-"Search helpers
-set incsearch	"Search as you type
-set hlsearch	"Highlight matches
-nnoremap <leader><space> :nohlsearch<CR>
+set wildmenu "Command auto complete Search helpers set incsearch	"Search as you type set hlsearch	"Highlight matches nnoremap <leader><space> :nohlsearch<CR>
 
 "Move vertically by visual line
 nnoremap j gj
 nnoremap k gk
+
+" Quick navigate splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+set splitbelow
+set splitright
+" Note: ctrl+w = evens out splits
 
 "Folding
 set foldmethod=syntax
@@ -86,9 +92,9 @@ inoremap jk <esc>
 noremap Q q
 noremap q: :
 
-"Quick navigation to start/end of line, top/bottom of page with shift nav
+"Quick navigation to start/end of line
 nnoremap H ^
-nnoremap L A<esc>
+nnoremap L $
 
 "Filetype specific stuff
 augroup cplusplus

@@ -67,6 +67,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -210,9 +211,9 @@ client.urgent           $background     $background     $white      $background
 ###############################################
 
 #Enable gaps
-for_window [class="^.*"] border pixel 3
-gaps inner 20
-gaps outer 10
+for_window [class="^.*"] border pixel 5
+gaps inner 10
+gaps outer 5
 
 #Only one window -> no gaps!
 smart_gaps on

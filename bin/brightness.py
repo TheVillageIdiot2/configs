@@ -21,7 +21,7 @@ def boundPercent(perc):
     '''
     Bounds perc to range [0.1, 1.0]
     '''
-    perc = max(0.1, perc)
+    perc = max(0.01, perc)
     perc = min(1.0, perc)
     return perc
 
@@ -68,8 +68,9 @@ action_switch = {
 
 try:
     action_switch[sys.argv[1]]()
-except:
+except Exception as e:
     printHelp()
+    print(e)
         
 
 
